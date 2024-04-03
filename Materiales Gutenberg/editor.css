@@ -1,0 +1,14 @@
+.imagen-texto-block .block-editor-rich-text__editable {
+    color: white;
+}
+.ultimas-recetas {
+    list-style: none;
+    padding: 0;
+}
+.editor-styles-wrapper ul {
+    list-style: none!important;
+}
+.ultimas-recetas h1 {
+    width: 100%;
+    text-align: center;
+}

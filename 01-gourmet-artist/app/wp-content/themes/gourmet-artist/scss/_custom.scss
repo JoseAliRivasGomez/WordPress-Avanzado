@@ -1,0 +1,199 @@
+
+$tituloPagina: 'Pinyon Script', cursive;
+$tituloDescripcion: 'Yellowtail', cursive;
+
+a:visited {
+  color:$primary-color;
+}
+.byline {
+  display: inline;
+}
+.separator::after {
+  content: " ";
+  background-image: url(../img/separator.png);
+  background-repeat: no-repeat;
+  background-position: center center;
+  display: block;
+  margin: 0 auto;
+  height:rem-calc(10);
+  width: rem-calc(50);
+}
+
+header {
+  .header-image {
+    height: 376px;
+    background-repeat: no-repeat;
+    background-position: center center;
+    .site-branding {
+      padding-top: rem-calc(120);
+      h1.site-title {
+        font-family: $tituloPagina;
+      }
+      p.site-description {
+        font-family: $tituloDescripcion;
+        font-size: rem-calc(40);
+        border-bottom: 1px solid $white;
+        display: inline-block;
+        line-height: 37px;
+      }
+      a,
+      p {
+        color:$white;
+      }
+    }
+  }
+  .main-navigation {
+    background-color: $primary-color;
+    li {
+      float: none;
+
+      &.current-menu-item {
+        background-color: $white;
+        a {
+          color:$primary-color;
+          transition: all 0.5s ease;
+          &:hover {
+            background-color: lighten($primary-color, 10);
+            color: $white;
+          }
+        }
+      }
+      a {
+          color:$white;
+          padding: rem-calc(20 0)!important;
+          font-weight: bold;
+          transition: background-color 0.5s ease;
+          &:hover {
+            background-color: darken($primary-color, 10);
+          }
+          i {
+            font-size: rem-calc(30);
+          }
+      }
+    }
+  }
+}
+
+.no-imagen {
+  @extend .header-image;
+  background-color: darken($primary-color, 10);
+}
+
+/*** Ultimas Recetas **/
+#content {
+  margin-top: rem-calc(30);
+  h1.entry-title,
+  h1.page-title {
+    @extend .separator;
+    @include breakpoint(medium) {
+      font-size: rem-calc(40);
+    }
+  }
+
+  div.entry-meta {
+    i {
+        font-size: rem-calc(25);
+    }
+    a {
+      color:$black;
+    }
+  }
+  h2.ultimas-recetas {
+    @extend .separator;
+    margin-bottom: rem-calc(30);
+
+  }
+
+  h2.entry-title {
+    font-size: rem-calc(24);
+    a {
+      color:$black;
+    }
+  }
+
+  div.entry-content {
+    margin-top:rem-calc(20);
+
+    a.button {
+      margin-top: rem-calc(20);
+      text-transform: uppercase;
+      font-weight: bold;
+      &:visited {
+        color:$white;
+      }
+    }
+  }
+}
+
+/** FOOTER ***/
+
+footer.site-footer {
+  background-color: $dark-gray;
+  padding:rem-calc(20 0);
+
+  ul {
+    margin-top: rem-calc(20);
+    li {
+      a {
+        color:$white;
+
+
+      }
+    }
+  }
+  ul#social-menu {
+    margin-top:0;
+      li {
+        a {
+          font-family: foundation-icons;
+          color:$white;
+          font-size: 0;
+          &:before {
+            font-size: rem-calc(50);
+          }
+          &[href="http://www.facebook.com"]:before {
+            content: "\f1c4";
+          }
+          &[href="http://www.youtube.com"]:before {
+            content: "\f1ea";
+          }
+          &[href="http://www.twitter.com"]:before {
+            content: "\f1e4";
+          }
+        }
+      }
+  }
+
+}
+
+/** SIDEBAR **/
+aside {
+  h2.widget-title {
+    @extend .separator;
+  }
+  h3.ultimos-post {
+    font-size: rem-calc(24);
+    @include breakpoint(medium) {
+      font-size: rem-calc(16);
+    }
+  }
+  .widget_ultimost_post {
+    li {
+      margin-bottom: rem-calc(10);
+    }
+  }
+}
+
+/** Formulario**/
+
+#btn_enviar,
+#newsletter_enviar {
+  @include button-style($primary-color, darken($primary-color, 10), $white);
+  border: none;
+  border-radius: 0;
+  box-shadow:none;
+  padding: $button-padding;
+  font-size: rem-calc(16);
+  text-transform: uppercase;
+  font-weight: bold;
+}

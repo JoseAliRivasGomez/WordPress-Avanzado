@@ -1,0 +1,174 @@
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    line-height: 2;
+}
+img {
+    max-width: 100%;
+}
+.seccion {
+    min-height: 800px;
+    padding: 100px 0;
+}
+hr {
+    border: 2px solid #e1e1e1;
+}
+h1 {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 900;
+    text-align: center;
+    margin-bottom: 100px;
+}
+
+/** BLOQUES **/
+
+.contenedor {
+    margin: 0 auto;
+    max-width: 1200px;
+}
+
+.testimonial-block {
+    border-top: 4px solid #ed143d;
+    padding: 1rem;
+    position: relative;
+}
+.testimonial-block blockquote::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    display: block;
+    width: 400px;
+    height: 400px;
+    background-image: url('../img/quote.svg');
+    background-repeat: no-repeat;
+    background-position: bottom left;
+    background-size: 300px;
+    opacity: .3;
+    z-index: -1;
+}
+.testimonial-block blockquote{
+    padding-left: 150px;
+    margin: 3rem;
+}
+
+.testimonial-info {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+.testimonial-info img {
+    width: 100px;
+    border-radius: 50%;
+    margin-right: 20px;
+}
+.testimonial-info p {
+    font-family: 'Montserrat', sans-serif;
+    color: #ed143d;
+    font-weight: 700;
+}
+
+/** Hero **/
+.hero-block {
+    background:  url(../img/hero-image.jpg);
+    background-repeat: no-repeat;
+    background-position:  bottom center;
+    background-size: cover;
+    height: 650px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: white;
+    padding-top: 120px;
+}
+.hero-block h1 {
+    font-weight: 700;
+    font-size: 40px;
+    color: white;
+    text-transform: uppercase;
+    margin: 0;
+    padding: 0 2rem;
+    width: 100%;
+}
+.hero-block p {
+    font-size: 22px;
+}
+
+/*** Imagen y Texto Block **/
+
+.imagen-texto-block {
+    padding: 100px 0;
+    background-color: dodgerblue;
+}
+.imagen-texto-block .contenedor{
+    max-width: 1000px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.imagen-texto-block .contenido {
+    flex: 0 0 60%;
+    color: white;
+}
+.imagen-texto-block h1 {
+    font-family: 'Staatliches', cursive;
+    font-weight: 400;
+    margin: 0;
+    font-size: 60px;
+}
+.imagen-texto-block .contenido 
+.imagen-texto-block .imagen {
+    flex: 0 1 calc(40% - 2rem);
+}
+.imagen-texto-block .boton {
+    background-color: white;
+    padding: 10px 30px;
+    font-size: 18px;
+    margin-top: 30px;
+    text-align: center;
+    color: dodgerblue;
+    text-transform: uppercase;
+    text-decoration: none;
+    font-family: 'Raleway', sans-serif;
+    font-weight: 700;
+    border-radius: 10px;
+}
+
+/*** Ultimas Recetas **/
+.ultimas-recetas {
+    list-style: none;
+    padding: 0;
+}
+@media (min-width: 768px) {
+    .ultimas-recetas {
+        display: flex;
+        justify-content: space-between;
+    }
+    .ultimas-recetas li {
+        flex: 0 0 calc(33.3% - 1rem);
+    }
+}
+.ultimas-recetas .contenido {
+    padding: 10px 20px;
+}
+.ultimas-recetas h2 {
+    color: black;
+    font-size: 30px;
+    margin: 0;
+    line-height: 1.2;
+}
+.ultimas-recetas .meta span {
+    color: #3f9c1b;
+    font-weight: bold;
+}
+.ultimas-recetas .boton {
+    background-color: #3f9c1b;
+    padding: 10px;
+    display: block;
+    text-align: center;
+    border-radius: 10px;
+    color: white;
+    text-transform: uppercase;
+    font-weight: bold;
+    text-decoration: none;
+}

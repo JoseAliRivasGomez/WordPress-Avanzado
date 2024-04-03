@@ -1,0 +1,1404 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Code Snippets WordPress Avanzado Custom Post Types, Taxonomías y Metaboxes</title>
+	<link rel="stylesheet" href="librerias/prism.css">
+	<script src="librerias/jquery-1.11.3.min.js"></script>
+	<script src="librerias/smooth-scroll.min.js"></script>
+	<script src="librerias/prism.js"></script>
+</head>
+<body>
+<header class="masthead">
+		<div class="wrapper">
+			<h1>WordPress Avanzado Custom Post Types, Taxonomías y Metaboxes</h1>
+			<div class="sub">
+				Por: Juan Pablo de la torre Valdez ( @JuanDevWP ) <br/>
+				www.easy-webdev.com
+			</div>
+		</div>
+</header>
+<nav id="toc" class="navigation">
+    <ul class="wrapper">
+      <li>
+        <a data-scroll href="#capitulo-01">Capitulo 1: Introducción al Curso</a>
+        <ul>
+          <li><a data-scroll  href="#video-0101">1.1 Tour por el Proyecto Finalizado</a></li>
+          <li><a data-scroll  href="#video-0102">1.2 Instalando WordPress</a></li>
+          <li><a data-scroll  href="#video-0103">1.3 Cargando las distintas versiones del sitio web</a></li>
+					<li><a data-scroll  href="#video-0104">1.4 ¿Problemas con Duplicator? aquí algunas soluciones</a></li>
+					<li><a data-scroll  href="#video-0105">1.5 Utilizando los Code Snippets</a></li>
+					<li><a data-scroll  href="#video-0106">1.6 Cargando el Theme y Contenido del Curso</a></li>
+			  </ul>
+      </li>
+
+      <li>
+        <a data-scroll href="#capitulo-02">Capitulo 2: Trabajando con Custom Post Types</a>
+        <ul>
+          <li><a data-scroll  href="#video-0201">2.1 ¿Que es un custom Post Type?</a></li>
+          <li><a data-scroll  href="#video-0202">2.2 Creando un Plugin para nuestros Custom Post Types</a></li>
+          <li><a data-scroll  href="#video-0203">2.3 Creando un Custom Post Type en nuestro Plugin</a></li>
+          <li><a data-scroll  href="#video-0204">2.4 Creando un Custom Post Type avanzado</a></li>
+					<li><a data-scroll  href="#video-0205">2.5 Agregando un Post Type más para Eventos</a></li>
+					<li><a data-scroll  href="#video-0206">2.6 Utilizar el Plugin Custom Post Type UI para agilizar el proceso</a></li>
+					<li><a data-scroll  href="#video-0207">2.7 GenerateWP para crear Custom Post Types</a></li>
+					<li><a data-scroll  href="#video-0208">2.8 Agregando Posts al Post Type de Recetas</a></li>
+        </ul>
+      </li>
+
+      <li>
+        <a data-scroll href="#capitulo-03">Capitulo 3: Trabajando con Taxonomias</a>
+        <ul>
+          <li><a data-scroll  href="#video-0301">3.1 ¿Qué son las Taxonomías?</a></li>
+          <li><a data-scroll  href="#video-0302">3.2 Creando nuestra primer Taxonomia</a></li>
+          <li><a data-scroll  href="#video-0303">3.3 Creando una Taxonomía Avanzada</a></li>
+          <li><a data-scroll  href="#video-0304">3.4 Creando una Taxonomía para Horario de Comida</a></li>
+					<li><a data-scroll  href="#video-0305">3.5 Creando Taxonomia para Estado de Ánimo</a></li>
+					<li><a data-scroll  href="#video-0306">3.6 Creando una Taxonomia con Custom Post Type UI</a></li>
+					<li><a data-scroll  href="#video-0307">3.7 Generando una Taxonomia con GenerateWP</a></li>
+					<li><a data-scroll  href="#video-0308">3.8 Agregando Términos a nuestras Taxonomías y posts</a></li>
+					<li><a data-scroll  href="#video-0309">3.9 Importando Archivo de Duplicator para continuar trabajando</a></li>
+        </ul>
+      </li>
+
+
+			<li>
+				<a data-scroll href="#capitulo-04">Capitulo 4: Integrando todo a nuestro Theme</a>
+				<ul>
+					<li><a data-scroll  href="#video-0401">4.1 Creando un archivo Single para nuestros Custom Post Types</a></li>
+					<li><a data-scroll  href="#video-0402">4.2 Mostrando nuestras Taxonomías en nuestro Template</a></li>
+					<li><a data-scroll  href="#video-0403">4.3 Mostrando un Archivo de Taxonomias</a></li>
+					<li><a data-scroll  href="#video-0404">4.4 Mostrando un Archivo de Taxonomias en Especifico</a></li>
+					<li><a data-scroll  href="#video-0405">4.5 Mostrando nuestras Entradas en nuestro Index</a></li>
+					<li><a data-scroll  href="#video-0406">4.6 Imprimiendo taxonomias y terminos en el Index</a></li>
+					<li><a data-scroll  href="#video-0407">4.7 Identificando los Custom Post Types en una búsqueda</a></li>
+				</ul>
+			</li>
+
+			<li>
+				<a data-scroll href="#capitulo-05">Capitulo 5: Ejemplo Avanzado de Usar Taxonomías en WordPress</a>
+				<ul>
+					<li><a data-scroll  href="#video-0501">5.1 Lo que vamos a construir a final de este capítulo</a></li>
+					<li><a data-scroll  href="#video-0502">5.2 Creando un Menú de Términos de Taxonomías</a></li>
+					<li><a data-scroll  href="#video-0503">5.3 ¿Como hacer un WP_Query utilizando Taxonomías?</a></li>
+					<li><a data-scroll  href="#video-0504">5.4 Creando una función para hacer realizar la consulta de  Post Type y Taxonomías </a></li>
+					<li><a data-scroll  href="#video-0505">5.5 Finalizando nuestra función e imprimiendo resultados</a></li>
+					<li><a data-scroll  href="#video-0506">5.6 Agregando JavaScript a nuestro ejemplo</a></li>
+					<li><a data-scroll  href="#video-0507">5.7 Finalizando nuestro Ejemplo con CSS</a></li>
+				</ul>
+			</li>
+
+
+			<li>
+				<a data-scroll href="#capitulo-06">Capitulo 6: Ejemplo con Taxonomías: Proponer una comida basada en la hora del día</a>
+				<ul>
+					<li><a data-scroll  href="#video-0601">6.1 Lo que vamos a construir a final de este capítulo</a></li>
+					<li><a data-scroll  href="#video-0602">6.2 Creando una consulta para utilizarla con WP Ajax</a></li>
+					<li><a data-scroll  href="#video-0603">6.3 Pasando nuestros datos con WP Ajax</a></li>
+					<li><a data-scroll  href="#video-0604">6.4 Creando un Template HTML</a></li>
+					<li><a data-scroll  href="#video-0605">6.5 Detectando la hora del día y cambiando las consultas</a></li>
+					<li><a data-scroll  href="#video-0606">6.6 Finalizando nuestro ejemplo con CSS</a></li>
+				</ul>
+			</li>
+
+			<li>
+				<a data-scroll href="#capitulo-07">Capitulo 7: Trabajando con Metaboxes</a>
+				<ul>
+					<li><a data-scroll  href="#video-0701">7.1 ¿Qué son los Metaboxes?</a></li>
+					<li><a data-scroll  href="#video-0702">7.2 Creando un Plugin para nuestros Metaboxes</a></li>
+					<li><a data-scroll  href="#video-0703">7.3 Agregando Zona de Metaboxes</a></li>
+					<li><a data-scroll  href="#video-0704">7.4 Agregando campos de texto a Metaboxes</a></li>
+					<li><a data-scroll  href="#video-0705">7.5 Guardando Metaboxes a la Base de datos</a></li>
+					<li><a data-scroll  href="#video-0706">7.6 Imprimiendo metaboxes en nuestra plantilla</a></li>
+				</ul>
+			</li>
+
+			<li>
+				<a data-scroll href="#capitulo-08">Capitulo 8: Creando un Plugin de Eventos con CMB2</a>
+				<ul>
+					<li><a data-scroll  href="#video-0801">8.1 Descargando y creando un plugin con CMB2</a></li>
+					<li><a data-scroll  href="#video-0802">8.2 Viendo todos los campos disponibles con CMB2</a></li>
+					<li><a data-scroll  href="#video-0803">8.3 Llamando las librerías de CMB2</a></li>
+					<li><a data-scroll  href="#video-0804">8.4 Agregando campos a Eventos</a></li>
+					<li><a data-scroll  href="#video-0805">8.5 Agregando Eventos</a></li>
+					<li><a data-scroll  href="#video-0806">8.6 Como hacer Query a Meta Boxes</a></li>
+					<li><a data-scroll  href="#video-0807">8.7 Imprimir todos los campos</a></li>
+					<li><a data-scroll  href="#video-0808">8.8 Imprimir los eventos anteriores</a></li>
+				</ul>
+			</li>
+    </ul>
+</nav>
+<div class="wrapper index">
+
+	<section id="capitulo-01" class="chapter">
+		<h2 class="chapter-title">Capitulo 1: Introducción al Curso</h2>
+			<article id="video-0101" class="video">
+	  	<h3 class="titulo">1.1 Tour por el Proyecto Finalizado</h3>
+			<h4>No hay Snippets para este video</h4>
+		  </article>
+
+			<article id="video-0102" class="video">
+			<h3 class="titulo">1.2 Instalando WordPress</h3>
+			<h4>No hay Snippets para este video</h4>
+			</article>
+
+			<article id="video-0103" class="video">
+			<h3 class="titulo">1.3 Cargando las distintas versiones del sitio web</h3>
+			<h4>No hay Snippets para este video</h4>
+			</article>
+
+			<article id="video-0104" class="video">
+			<h3 class="titulo">1.4 ¿Problemas con Duplicator? aquí algunas soluciones</h3>
+			<pre class=" language-php">
+				<code class="language-* language-mysql">
+sql_mode=NO_ENGINE_SUBSTITUTION
+			</code></pre>
+			</article>
+
+			<article id="video-0105" class="video">
+			<h3 class="titulo">1.5 Utilizando los Code Snippets</h3>
+			<h4>No hay Snippets para este video</h4>
+			</article>
+
+			<article id="video-0106" class="video">
+			<h3 class="titulo">1.6 Cargando el Theme y Contenido del Curso</h3>
+			<h4>No hay Snippets para este video</h4>
+			</article>
+	</section> <!--#capitulo-01-->
+
+
+
+  <section id="capitulo-02" class="chapter">
+  <h2 class="chapter-title">Capitulo 2: Trabajando con Custom Post Types</h2>
+
+	<article id="video-0201" class="video">
+	<h3 class="titulo">2.1 ¿Que es un custom Post Type?</h3>
+	<h4>No hay Snippets para este video</h4>
+	</article>
+
+	<article id="video-0202" class="video">
+	<h3 class="titulo">2.2 Creando un Plugin para nuestros Custom Post Types y Taxonomias</h3>
+	<pre class=" language-php">
+		<code class="language-* language-php">
+&lt;?php
+/*
+Plugin Name: Gourmet Artist Post Types
+Plugin URI:
+Description: Agrega Custom Post Types al sitio Gourmet Artist
+Version:     1.0
+Author:      Juan Pablo de la torre Valdez
+Author URI:
+License:     GPL2
+License URI: https://www.gnu.org/licenses/gpl-2.0.html
+*/
+
+		</code></pre>
+	</article><!-- .movie -->
+
+  	<article id="video-0203" class="video">
+  	<h3 class="titulo">2.3 Creando un Custom Post Type en nuestro Plugin</h3>
+		<pre class=" language-php">
+			<code class="language-* language-php">
+&lt;?php
+	add_action( 'init', 'crear_post_type_receta' );
+
+	function crear_post_type_receta() {
+		  register_post_type( 'recetas',
+		    array(
+		      'labels' => array(
+		        'name' => __( 'Receta' ),
+		        'singular_name' => __( 'Receta' )
+		      ),
+		      'public' => true,
+		      'has_archive' => true,
+		    )
+		  );
+	}
+			</code></pre>
+  	</article><!-- .movie -->
+
+		<article id="video-0204" class="video">
+  	<h3 class="titulo">2.4 Creando un Custom Post Type avanzado</h3>
+		<pre class=" language-php">
+			<code class="language-* language-php">
+&lt;?php
+add_action( 'init', 'crear_post_type_receta', 0 );
+
+function crear_post_type_receta() {
+
+// Etiquetas para el Post Type
+	$labels = array(
+		'name'                => _x( 'Recetas', 'Post Type General Name', 'gourmet-artist' ),
+		'singular_name'       => _x( 'Receta', 'Post Type Singular Name', 'gourmet-artist' ),
+		'menu_name'           => __( 'Recetas', 'gourmet-artist' ),
+		'parent_item_colon'   => __( 'Receta Padre', 'gourmet-artist' ),
+		'all_items'           => __( 'Todas las Recetas', 'gourmet-artist' ),
+		'view_item'           => __( 'Ver Receta', 'gourmet-artist' ),
+		'add_new_item'        => __( 'Agregar Nueva Receta', 'gourmet-artist' ),
+		'add_new'             => __( 'Agregar Nueva Receta', 'gourmet-artist' ),
+		'edit_item'           => __( 'Editar Receta', 'gourmet-artist' ),
+		'update_item'         => __( 'Actualizar Receta', 'gourmet-artist' ),
+		'search_items'        => __( 'Buscar Receta', 'gourmet-artist' ),
+		'not_found'           => __( 'No encontrado', 'gourmet-artist' ),
+		'not_found_in_trash'  => __( 'No encontrado en la papelera', 'gourmet-artist' ),
+	);
+
+// Otras opciones para el post type
+
+	$args = array(
+		'label'               => __( 'recetas', 'gourmet-artist' ),
+		'description'         => __( 'Receta news and reviews', 'gourmet-artist' ),
+		'labels'              => $labels,
+		// Todo lo que soporta este post type
+		'supports'            => array( 'title', 'editor', 'excerpt', 'author', 'thumbnail', 'comments', 'revisions', 'custom-fields', ),
+		/* Un Post Type hierarchical es como las paginas y puede tener padres e hijos.
+		* Uno sin hierarchical es como los posts
+		*/
+		'hierarchical'        => false,
+		'public'              => true,
+		'show_ui'             => true,
+		'show_in_menu'        => true,
+		'show_in_nav_menus'   => true,
+		'show_in_admin_bar'   => true,
+		'menu_position'       => 5,
+		'menu_icon'           => 'dashicons-admin-page',
+		'can_export'          => true,
+		'has_archive'         => true,
+		'exclude_from_search' => false,
+		'publicly_queryable'  => true,
+		'capability_type'     => 'page',
+	);
+
+	// Por ultimo registramos el post type
+	register_post_type( 'recetas', $args );
+
+}
+			</code></pre>
+  	</article><!-- .movie -->
+
+
+
+		<article id="video-0204" class="video">
+  	<h3 class="titulo">2.5 Agregando un Post Type más para Eventos</h3>
+		<pre class=" language-php">
+			<code class="language-* language-php">
+&lt;?php
+// Post Type Eventos
+add_action( 'init', 'crear_post_type_eventos', 0 );
+
+function crear_post_type_eventos() {
+
+// Etiquetas para el Post Type
+	$labels = array(
+		'name'                => _x( 'Eventos', 'Post Type General Name', 'gourmet-artist' ),
+		'singular_name'       => _x( 'Evento', 'Post Type Singular Name', 'gourmet-artist' ),
+		'menu_name'           => __( 'Eventos', 'gourmet-artist' ),
+		'parent_item_colon'   => __( 'Evento Padre', 'gourmet-artist' ),
+		'all_items'           => __( 'Todas las Eventos', 'gourmet-artist' ),
+		'view_item'           => __( 'Ver Eventos', 'gourmet-artist' ),
+		'add_new_item'        => __( 'Agregar Nueva Evento', 'gourmet-artist' ),
+		'add_new'             => __( 'Agregar Nueva Evento', 'gourmet-artist' ),
+		'edit_item'           => __( 'Editar Evento', 'gourmet-artist' ),
+		'update_item'         => __( 'Actualizar Evento', 'gourmet-artist' ),
+		'search_items'        => __( 'Buscar Evento', 'gourmet-artist' ),
+		'not_found'           => __( 'No encontrado', 'gourmet-artist' ),
+		'not_found_in_trash'  => __( 'No encontrado en la papelera', 'gourmet-artist' ),
+	);
+
+// Otras opciones para el post type
+
+	$args = array(
+		'label'               => __( 'eventos', 'gourmet-artist' ),
+		'description'         => __( 'Próximos Eventos', 'gourmet-artist' ),
+		'labels'              => $labels,
+		// Todo lo que soporta este post type
+		'supports'            => array( 'title', 'editor', 'excerpt', 'author', 'thumbnail', 'comments', 'revisions', 'custom-fields', ),
+		/* Un Post Type hierarchical es como las paginas y puede tener padres e hijos.
+		* Uno sin hierarchical es como los posts
+		*/
+		'hierarchical'        => false,
+		'public'              => true,
+		'show_ui'             => true,
+		'show_in_menu'        => true,
+		'show_in_nav_menus'   => true,
+		'show_in_admin_bar'   => true,
+		'menu_position'       => 5,
+   		'menu_icon'           => 'dashicons-calendar-alt',
+		'can_export'          => true,
+		'has_archive'         => true,
+		'exclude_from_search' => false,
+		'publicly_queryable'  => true,
+		'capability_type'     => 'page',
+	);
+
+	// Por ultimo registramos el post type
+	register_post_type( 'eventos', $args );
+
+}
+			</code></pre>
+  	</article><!-- .movie -->
+
+		<article id="video-0206" class="video">
+  	<h3 class="titulo">2.6 Utilizar el Plugin Custom Post Type UI para agilizar el proceso</h3>
+		<h4>No hay Snippets para este video</h4>
+	  </article>
+
+		<article id="video-0207" class="video">
+  	<h3 class="titulo">2.7 GenerateWP para crear Custom Post Types</h3>
+		<h4>No hay Snippets para este video</h4>
+	  </article>
+
+		<article id="video-0208" class="video">
+		<h3 class="titulo">2.8 Agregando Posts al Post Type de Recetas</h3>
+		<h4>Se incluye un Archivo con Posts en el Curso</h4>
+		</article>
+  </section> <!--#capitulo-02-->
+
+
+	<section id="capitulo-03" class="chapter">
+  <h2 class="chapter-title">Capitulo 3: Trabajando con Taxonomias</h2>
+
+	<article id="video-0301" class="video">
+	<h3 class="titulo">3.1 ¿Qué son las Taxonomías?</h3>
+	<h4>No hay Snippets para este video</h4>
+	</article>
+
+	<article id="video-0302" class="video">
+	<h3 class="titulo">3.2 Creando nuestra primer Taxonomia</h3>
+	<pre class=" language-php">
+		<code class="language-* language-php">
+	function tipo_receta() {
+		register_taxonomy(
+			'horario-menu',
+			'recetas',
+			array(
+				'label' => __( 'Tipo de Receta' ),
+				'rewrite' => array( 'slug' => 'person' ),
+	      'hierarchical' => true,
+			)
+		);
+	}
+	add_action( 'init', 'tipo_receta' );
+		</code></pre>
+	</article><!-- .movie -->
+
+
+	<article id="video-0303" class="video">
+	<h3 class="titulo">3.3 Creando una Taxonomía Avanzada</h3>
+	<pre class=" language-php">
+		<code class="language-* language-php">
+$labels = array(
+	'name'              => _x( 'Tipo de comida', 'taxonomy general name' ),
+	'singular_name'     => _x( 'Tipo de comida', 'taxonomy singular name' ),
+	'search_items'      => __( 'Buscar Tipo de comida' ),
+	'all_items'         => __( 'Todos los Tipo de comidas' ),
+	'parent_item'       => __( 'Tipo de comida Padre' ),
+	'parent_item_colon' => __( 'Tipo de comida Padre:' ),
+	'edit_item'         => __( 'Editar Tipo de comida' ),
+	'update_item'       => __( 'Actualizar Tipo de comida' ),
+	'add_new_item'      => __( 'Agregar Nuevo Tipo de comida' ),
+	'new_item_name'     => __( 'Nuevo Tipo de comida' ),
+	'menu_name'         => __( 'Tipo de comida' ),
+);
+
+$args = array(
+	'hierarchical'      => true,
+	'labels'            => $labels,
+	'show_ui'           => true,
+	'show_admin_column' => true,
+	'query_var'         => true,
+	'rewrite' => array( 'slug' => 'tipo-comida' ),
+);
+
+register_taxonomy( 'tipo-comida', array( 'recetas' ), $args );
+
+		</code></pre>
+	</article><!-- .movie -->
+
+
+	<article id="video-0304" class="video">
+	<h3 class="titulo">3.4 Creando una Taxonomía para Horario de Comida</h3>
+	<pre class=" language-php">
+		<code class="language-* language-php">
+function tipo_receta() {
+  	$labels = array(
+  		'name'              => _x( 'Horario de Comida', 'taxonomy general name' ),
+  		'singular_name'     => _x( 'Horario de Comida', 'taxonomy singular name' ),
+  		'search_items'      => __( 'Buscar Horario' ),
+  		'all_items'         => __( 'Todos los Horarios' ),
+  		'parent_item'       => __( 'Horario Padre' ),
+  		'parent_item_colon' => __( 'Horario Padre:' ),
+  		'edit_item'         => __( 'Editar Horario' ),
+  		'update_item'       => __( 'Actualizar Horario' ),
+  		'add_new_item'      => __( 'Agregar Nuevo Horario' ),
+  		'new_item_name'     => __( 'Nuevo Horario' ),
+  		'menu_name'         => __( 'Horario' ),
+  	);
+
+  	$args = array(
+  		'hierarchical'      => true,
+  		'labels'            => $labels,
+  		'show_ui'           => true,
+  		'show_admin_column' => true,
+  		'query_var'         => true,
+  		'rewrite' => array( 'slug' => 'horario' ),
+  	);
+
+  	register_taxonomy( 'horario-menu', array( 'recetas' ), $args );
+}
+add_action( 'init', 'tipo_receta' );
+
+		</code></pre>
+	</article><!-- .movie -->
+
+
+	<article id="video-0305" class="video">
+	<h3 class="titulo">3.5 Creando Taxonomia para Estado de Ánimo</h3>
+	<pre class=" language-php">
+		<code class="language-* language-php">
+$labels = array(
+	'name'              => _x( 'Estado de Animo', 'taxonomy general name' ),
+	'singular_name'     => _x( 'Estado de Animo', 'taxonomy singular name' ),
+	'search_items'      => __( 'Buscar Estado de Animo' ),
+	'all_items'         => __( 'Todos los Estados de Animo' ),
+	'parent_item'       => __( 'Genero Estado' ),
+	'parent_item_colon' => __( 'Genero Estado:' ),
+	'edit_item'         => __( 'Editar Estado' ),
+	'update_item'       => __( 'Actualizar Estado' ),
+	'add_new_item'      => __( 'Agregar Nuevo Estado' ),
+	'new_item_name'     => __( 'Nuevo Estado' ),
+	'menu_name'         => __( 'Estado de Ánimo' ),
+);
+
+$args = array(
+	'hierarchical'      => false,
+	'labels'            => $labels,
+	'show_ui'           => true,
+	'show_admin_column' => true,
+	'query_var'         => true,
+	'rewrite' => array( 'slug' => 'estado' ),
+);
+
+register_taxonomy( 'estado', array( 'recetas' ), $args );
+
+
+		</code></pre>
+	</article><!-- .movie -->
+
+	<article id="video-0306" class="video">
+	<h3 class="titulo">3.6 Creando una Taxonomia con Custom Post Type UI</h3>
+	<h4>No hay Snippets para este video</h4>
+	</article>
+
+
+	<article id="video-0307" class="video">
+	<h3 class="titulo">3.7 Generando una Taxonomia con GenerateWP</h3>
+	<h4>No hay Snippets para este video</h4>
+	</article>
+
+	<article id="video-0308" class="video">
+	<h3 class="titulo">3.8 Agregando Términos a nuestras Taxonomías y Posts</h3>
+	<h4>No hay Snippets para este video</h4>
+	</article>
+
+	<article id="video-0308" class="video">
+	<h3 class="titulo">3.9 Importando Archivo de Duplicator para continuar trabajando</h3>
+	<h4>No hay Snippets para este video</h4>
+	</article>
+
+
+
+
+</section> <!--#capitulo-03-->
+
+<section id="capitulo-04" class="chapter">
+<h2 class="chapter-title">Capitulo 4: Integrando todo a nuestro Theme</h2>
+
+<article id="video-0401" class="video">
+<h3 class="titulo">4.1 Creando un archivo Single para nuestros Custom Post Types</h3>
+<h4>No hay Snippets para este video</h4>
+</article>
+
+<article id="video-0402" class="video">
+<h3 class="titulo">4.2 Mostrando nuestras Taxonomías en nuestro Template</h3>
+<pre class=" language-php">
+	<code class="language-* language-php">
+
+&lt;div class="taxonomias">
+		&lt;div class="hora-comida">
+				&lt;?php echo get_the_term_list( $post->ID, 'horario-menu', "Hora de Comida: ", ', ',''); ?>
+		&lt;/div>
+		&lt;div class="tipo-comida">
+				&lt;?php echo get_the_term_list( $post->ID, 'tipo-comida', "Tipo de Platillo: ", ', ',''); ?>
+		&lt;/div>
+		&lt;div class="rango-precio">
+				&lt;?php echo get_the_term_list( $post->ID, 'precio_receta', "Precio: ", ', ',''); ?>
+		&lt;/div>
+		&lt;div class="estado-animo">
+			&lt;?php echo get_the_term_list( $post->ID, 'estado', "Estado de Ánimo: ", ', ',''); ?>
+		&lt;/div>
+&lt;/div>
+
+	</code></pre>
+</article><!-- .movie -->
+
+<article id="video-0403" class="video">
+<h3 class="titulo">4.3 Mostrando un Archivo de Taxonomias</h3>
+<pre class=" language-php">
+	<code class="language-* language-php">
+		&lt;?php
+				$termino_actual = get_queried_object();
+				$taxonomia = get_taxonomy( $termino_actual->taxonomy );
+				echo "<h2 class='text-center'>" . $taxonomia->label . ': ' . $termino_actual->name . '</h2>';
+		?>
+	</code></pre>
+</article><!-- .movie -->
+
+
+<article id="video-0404" class="video">
+<h3 class="titulo">4.4 Creando un Archivo para Taxonomias en Especifico</h3>
+<pre class=" language-php">
+	<code class="language-* language-php">
+&lt;header class="page-header por-precio">
+	&lt;?php
+			$termino_actual = get_queried_object();
+			$taxonomia = get_taxonomy( $termino_actual->taxonomy );
+			echo "<h2 class='text-center'>" . 'Recetas por precio: ' . $termino_actual->name . '</h2>';
+	?>
+&lt;/header><!-- .page-header -->
+	</code></pre>
+</article><!-- .movie -->
+
+<article id="video-0405" class="video">
+<h3 class="titulo">4.5 Mostrando nuestras Entradas en nuestro Index</h3>
+<pre class=" language-php">
+	<code class="language-* language-php">
+	function mostrar_post_types( $query ) {
+		// que no sea el admin y sea el query principal
+		if (!is_admin() && $query->is_main_query()){
+			// query a la home page
+			if(is_home()){
+				$query->set('post_type', array('post','recetas'));
+			}
+		}
+	}
+	add_action( 'pre_get_posts', 'mostrar_post_types' );
+	</code></pre>
+</article><!-- .movie -->
+
+<article id="video-0406" class="video">
+<h3 class="titulo">4.6 Imprimiendo taxonomias y terminos en el Index</h3>
+<pre class=" language-php">
+	<code class="language-* language-php">
+if('recetas' == get_post_type()) { ?>
+		&lt;div class="tipo-comida">
+				&lt;?php echo get_the_term_list( $post->ID, 'tipo-comida', "Tipo de Platillo: ", ', ',''); ?>
+		&lt;/div>
+		&lt;div class="rango-precio">
+				&lt;?php echo get_the_term_list( $post->ID, 'precio_receta', "Precio: ", ', ',''); ?>
+		&lt;/div>
+&lt;?php	}
+}
+	</code></pre>
+</article><!-- .movie -->
+
+
+<article id="video-0407" class="video">
+<h3 class="titulo">4.7 Identificando los Custom Post Types en una búsqueda</h3>
+<pre class=" language-php">
+	<code class="language-* language-php">
+&lt;?php
+if('recetas' == get_post_type()) {?>
+	&lt;div class="taxonomias">
+			&lt;div class="hora-comida">
+					&lt;?php echo get_the_term_list( $post->ID, 'horario-menu', "Hora de Comida: ", ', ',''); ?>
+			&lt;/div>
+			&lt;div class="tipo-comida">
+					&lt;?php echo get_the_term_list( $post->ID, 'tipo-comida', "Tipo de Platillo: ", ', ',''); ?>
+			&lt;/div>
+			&lt;div class="rango-precio">
+					&lt;?php echo get_the_term_list( $post->ID, 'precio_receta', "Precio: ", ', ',''); ?>
+			&lt;/div>
+			&lt;div class="estado-animo">
+				&lt;?php echo get_the_term_list( $post->ID, 'estado', "Estado de Ánimo: ", ', ',''); ?>
+			&lt;/div>
+	&lt;/div>
+&lt;?php	}
+?>
+	</code></pre>
+</article><!-- .movie -->
+
+</section><!--#capitulo-04-->
+
+
+<section id="capitulo-05" class="chapter">
+<h2 class="chapter-title">Capitulo 5: Ejemplo Avanzado de Usar Taxonomías en WordPress</h2>
+
+<article id="video-0501" class="video">
+<h3 class="titulo">5.1 Lo que vamos a construir a final de este capítulo</h3>
+<h4>No hay Snippets para este video</h4>
+</article>
+
+<article id="video-0502" class="video">
+<h3 class="titulo">5.2 Creando un Menú de Términos de Taxonomías</h3>
+<pre class=" language-php">
+	<code class="language-* language-php">
+&lt;ul class="menu">
+  &lt;?php
+  $terms = get_terms( array(
+      'taxonomy' => 'tipo-comida',
+  ) );
+  foreach($terms as $term) {
+    echo "&lt;li>&lt;a href='#". $term->slug . "'>" . $term->name ."&lt;/a>&lt;/li>";
+  }
+  ?>
+</ul>
+
+	</code></pre>
+</article><!-- .movie -->
+
+<article id="video-0503" class="video">
+<h3 class="titulo">5.3 ¿Como hacer un WP_Query utilizando Taxonomías?</h3>
+<pre class=" language-php">
+	<code class="language-* language-php">
+&lt;?php
+$args = array(
+  'posts_per_page' => 4,
+  'post_type' => 'recetas',
+  'order' => 'rand',
+  'tax_query' => array(
+    array(
+      'taxonomy' => 'tipo-comida',
+      'field'    => 'slug',
+      'terms'    => 'comida-mexicana',
+    )
+  ),
+);
+$query = new WP_Query( $args );
+while($query->have_posts()): $query->the_post();
+
+  the_title('&lt;h1>', '&lt;/h1>');
+
+endwhile; wp_reset_postdata();
+?>
+
+
+	</code></pre>
+</article><!-- .movie -->
+
+<article id="video-0504" class="video">
+<h3 class="titulo">5.4 Creando una función para hacer realizar la consulta de  Post Type y Taxonomías</h3>
+<pre class=" language-php">
+	<code class="language-* language-php">
+function filtrar_platillos( $busqueda ) {
+    // Get the list of files
+    $args = array(
+				'posts_per_page' => 4,
+				'post_type' => 'recetas',
+				'order' => 'rand',
+				'tax_query' => array(
+					array(
+						'taxonomy' => 'tipo-comida',
+						'field'    => 'slug',
+						'terms'    => $busqueda,
+					),
+				),
+		);
+
+		$platillos = new WP_Query($args);
+		if($platillos->have_posts()) {
+			echo '&lt;div id="'.$busqueda.'" class="row">';
+
+			while($platillos->have_posts()): $platillos->the_post();
+				echo '&lt;div class="small-6 medium-3 columns">';
+				echo '&lt;div class="platillo">';
+
+				echo '&lt;a href="'.get_the_permalink($post->ID).'">';
+				echo get_the_post_thumbnail( $post->ID, 'platilloBuscado');
+				echo '&lt;/a>';
+				echo '&lt;h2 class="text-center">'.  get_the_title() . '&lt;/h2>';
+				echo '&lt;/div>';
+				echo '&lt;/div>';
+	    endwhile; wp_reset_postdata();
+			echo '&lt;/div>';
+		}
+}
+	</code></pre>
+</article><!-- .movie -->
+
+
+<article id="video-0505" class="video">
+<h3 class="titulo">5.5 Finalizando nuestra función e imprimiendo resultados</h3>
+<pre class=" language-php">
+	<code class="language-* language-php">
+&lt;h2 class="text-center">Comida por tipo:&lt;/h2>
+&lt;div id="filtrar">
+  &lt;div class="menu-centered">
+    &lt;ul class="menu">
+      &lt;?php
+      $terms = get_terms( array(
+          'taxonomy' => 'tipo-comida',
+      ) );
+      foreach($terms as $term) {
+        echo "&lt;li>&lt;a href='#". $term->slug . "'>" . $term->name ."&lt;/a>&lt;/li>";
+      }
+      ?>
+    &lt;/ul>
+  &lt;/div>
+  &lt;div id="platillos">
+    &lt;?php
+      foreach($terms as $term) {
+          filtrar_platillos($term->slug);
+      }
+    ?>
+  &lt;/div>
+&lt;/div>
+
+	</code></pre>
+</article><!-- .movie -->
+
+<article id="video-0506" class="video">
+<h3 class="titulo">5.6 Agregando JavaScript a nuestro ejemplo</h3>
+<pre class=" language-php">
+	<code class="language-* language-php">
+jQuery(function($) {
+
+  $('#platillos > div').not(':first').hide();
+  jQuery('#filtrar .menu li:first-child').addClass('active');
+
+  $('#filtrar .menu a').on('click', function() {
+      jQuery('#filtrar .menu li').removeClass('active');
+      jQuery(this).parent().addClass('active');
+
+      var enlace = $(this).attr('href');
+
+      $('#platillos > div').hide();
+      $(enlace).fadeIn();
+      return false;
+  });
+});
+	</code></pre>
+</article><!-- .movie -->
+
+<article id="video-0507" class="video">
+<h3 class="titulo">5.7 Finalizando nuestro Ejemplo con CSS</h3>
+<pre class=" language-php">
+	<code class="language-* language-css">
+#filtrar {
+	margin:20px 0;
+}
+
+#filtrar .menu-centered {
+	text-align: center;
+}
+
+#filtrar ul.menu {
+	width:100%;
+}
+#filtrar ul.menu > li {
+	display: block;
+}
+@media only screen and (min-width:640px) {
+	#filtrar ul.menu {
+		width:auto;
+	}
+	#filtrar ul.menu > li {
+		display: table-cell;
+	}
+}
+#filtrar ul.menu {
+	display:inline-block;
+	background-color: #78a837;
+	margin-bottom: 20px;
+}
+#filtrar ul.menu li.active {
+	background-color: #5C8721;
+}
+#filtrar ul.menu  a {
+	color:white;
+	font-size:14px;
+	font-weight: bold;
+	text-transform: uppercase;
+	padding: 15px 20px;
+}
+#filtrar  h2 {
+	font-size:14px;
+	margin-top: 20px;
+	text-transform: uppercase;
+}
+#platillos {
+	background-color: #F4F4F4;
+	padding: 20px 0;
+}
+	</code></pre>
+</article><!-- .movie -->
+
+</section> <!--#capitulo05-->
+
+<section id="capitulo-06" class="chapter">
+<h2 class="chapter-title">Capitulo 6: Ejemplo con Taxonomías: Proponer una comida basada en la hora del día</h2>
+
+<article id="video-0601" class="video">
+<h3 class="titulo">6.1 Lo que vamos a construir a final de este capítulo</h3>
+<h4>No hay Snippets para este video</h4>
+</article>
+
+<article id="video-0602" class="video">
+<h3 class="titulo">6.2 Creando una consulta para utilizarla con WP Ajax</h3>
+<pre class=" language-php">
+	<code class="language-* language-php">
+function recetas_comer(){
+     $args = array(
+         'post_type' => 'recetas',
+         'posts_per_page' => 3,
+         'orderbyby' => 'rand',
+ 				 'tax_query' => array(
+   					array(
+   						'taxonomy' => 'horario-menu',
+   						'field'    => 'slug',
+   						'terms'    => 'comida',
+   					),
+ 				  ),
+     );
+     $posts = get_posts($args);
+
+     $listado = array();
+     foreach ( $posts as $post ) {
+          setup_postdata( $post );
+
+          $listado[] = array(
+              'objeto' =>$post,
+              'id'   => $post->ID,
+              'nombre' => $post->post_title,
+              'imagen' => get_the_post_thumbnail($post->ID,'filtrarHorario'),
+              'link' => get_permalink( $post->ID ),
+          );
+      }
+      header("Content-type: application/json");
+      echo json_encode( $listado);
+      die;
+ }
+
+add_action('wp_ajax_nopriv_recetas_comer', 'recetas_comer');
+add_action('wp_ajax_recetas_comer', 'recetas_comer');
+</code></pre>
+</article>
+
+<article id="video-0603" class="video">
+<h3 class="titulo">6.3 Pasando nuestros datos con WP Ajax</h3>
+<h4>En functions.php</h4>
+<pre class=" language-php">
+	<code class="language-* language-php">
+	wp_localize_script( 'appjs', 'admin_url', array(
+		'ajax_url' => admin_url( 'admin-ajax.php' )
+	));
+	</code></pre>
+
+<h4>En main.js</h4>
+<pre class=" language-php">
+	<code class="language-* language-javascript">
+jQuery.ajax({
+	url : admin_url.ajax_url,
+	type : 'post',
+	data : {
+		action : 'recetas_comer'
+	}
+}).done(function(response) {
+			  console.log(response);
+});
+</code></pre>
+</article>
+
+<article id="video-0604" class="video">
+<h3 class="titulo">6.4 Creando un Template HTML</h3>
+<h4>en index.php</h4>
+<pre><code class="language-* language-markup">
+	&lt;div class="platillos-por-hora">
+          &lt;h2 id="hora" class="text-center">Prepara esto para: &lt;/h2>
+          &lt;ul id="por-hora" class="row">
+
+          &lt;/ul>
+  &lt;/div>
+</code></pre>
+
+<h4>En main.js</h4>
+<pre><code class="language-* language-javascript">
+$.each(response, function(index, object) {
+	var plato_hora = '&lt;li class="medium-4 small-12 columns">' +
+										object.imagen +
+										'&lt;div class="contenido">'+
+										'&lt;h3 class="text-center">'+
+										'&lt;a href="'+object.link+'">' +
+											object.nombre +'&lt;/h3>' +
+										'&lt;/a>'+
+										'&lt;/div>'+
+									 '&lt;/li>';
+
+	$('#por-hora').append(plato_hora);
+});
+</code></pre>
+</article>
+
+<article id="video-0605" class="video">
+<h3 class="titulo">6.5 Detectando la hora del día y cambiando las consultas</h3>
+<h4>en main.js</h4>
+<pre><code class="language-* language-javascript">
+
+var fecha = new Date();
+var hora = fecha.getHours();
+if(hora <= 10) {
+  var comida = "desayunar";
+} else if (hora >= 11 && hora <= 17) {
+  var comida = "comer";
+} else {
+  var comida = "cenar";
+}
+</code></pre>
+<h4>En main.js</h4>
+<pre><code class="language-* language-javascript">
+jQuery.ajax({
+	url : admin_url.ajax_url,
+	type : 'post',
+	data : {
+		action : 'recetas_'+comida
+	}
+</code></pre>
+
+</article>
+
+<article id="video-0606" class="video">
+<h3 class="titulo">6.6 Finalizando nuestro ejemplo con CSS</h3>
+<pre><code class="language-* language-css">
+/**** COMIDA POR HORA **/
+
+.platillos-por-hora h2 em {
+	color:#78a837;
+}
+.platillos-por-hora ul div.contenido {
+	background-color:#78a837;
+	padding:10px;
+}
+.platillos-por-hora ul div.contenido h3 {
+	font-size: 20px;
+}
+.platillos-por-hora ul li  a {
+	color:#ffffff;
+}
+</code></pre>
+</article>
+
+</section> <!--#capitulo06-->
+
+<section id="capitulo-07" class="chapter">
+<h2 class="chapter-title">Capitulo 7: Trabajando con Metaboxes</h2>
+
+<article id="video-0701" class="video">
+<h3 class="titulo">7.1 ¿Qué son los Metaboxes?</h3>
+<h4>No hay Snippets para este video</h4>
+</article>
+
+<article id="video-0702" class="video">
+<h3 class="titulo">7.2 Creando un Plugin para nuestros Metaboxes</h3>
+<pre class=" language-php">
+	<code class="language-* language-php">
+&lt;?php
+/*
+Plugin Name: Gourmet Artist MetaBoxes
+Plugin URI:
+Description: Agrega MetaBoxes al sitio Gourmet Artist
+Version: 1.0
+Author: Juan Pablo De la torre Valdez
+Author URI:
+License: GLP2
+Licence URI: https://www.gnu.org/licenses/gpl-2.0.html
+*/
+	</code></pre>
+</article>
+
+<article id="video-0703" class="video">
+<h3 class="titulo">7.3 Agregando Zona de Metaboxes</h3>
+<pre class=" language-php">
+	<code class="language-* language-php">
+		function ga_agregar_metaboxes() {
+		    //string id, string Titulo, callback, pantalla, context (normal, side o advanced), prioridad, data callback
+		    add_meta_box("ga-metaboxes", "Nuestro Metabox", "ga_diseno_metaboxes", "recetas", "normal", "high", null);
+		}
+
+		add_action("add_meta_boxes", "ga_agregar_metaboxes");
+
+
+		function ga_diseno_metaboxes($post) {
+			echo "hola mundo";
+		}
+
+	</code></pre>
+</article>
+
+<article id="video-0704" class="video">
+<h3 class="titulo">7.4 Agregando campos de texto a Metaboxes</h3>
+<pre class=" language-php">
+	<code class="language-* language-php">
+function ga_diseno_metaboxes($post) {
+   //accion, nombre
+   wp_nonce_field(basename(__FILE__), "meta-box-nonce");
+   ?>
+  &lt;div>
+        &lt;label for="input-metabox">Calorias:&lt;/label>
+        &lt;input name="input-metabox" type="text" value=&lt;?php echo get_post_meta($post->ID, "input-metabox", true); ?>">
+        &lt;br/>
+
+          &lt;label for="textarea-metabox">Subtitulo del Post:&lt;/label>
+          &lt;textarea name="textarea-metabox" &lt;?php echo get_post_meta($post->ID, "textarea-metabox", true); ?&lt;/textarea>
+          &lt;br>
+
+          &lt;label for="dropdown-metabox">Calificación:&lt;/label>
+					&lt;select name="dropdown-metabox">
+							&lt;?php
+									$opciones = array(1, 2, 3, 4, 5);
+									foreach($opciones as $llave => $valor) {
+											if($valor == get_post_meta($post->ID, "dropdown-metabox", true)) { ?>
+															&lt;option selected>&lt;?php echo $valor; ?>&lt;/option>
+										 &lt;?php } else { ?>
+															&lt;option>&lt;?php echo $valor; ?>&lt;/option>
+										 &lt;?php  }
+									} //fin foreach
+							?>
+					&lt;/select>
+          &lt;br>
+      &lt;/div>
+   &lt;?php
+}
+	</code></pre>
+</article>
+
+<article id="video-0705" class="video">
+<h3 class="titulo">7.5 Guardando Metaboxes a la Base de datos</h3>
+<pre class=" language-php">
+	<code class="language-* language-php">
+function ga_guardar_metaboxes($post_id, $post, $update) {
+    if (!isset($_POST["meta-box-nonce"]) || !wp_verify_nonce($_POST["meta-box-nonce"], basename(__FILE__)))
+        return $post_id;
+
+    if(!current_user_can("edit_post", $post_id))
+        return $post_id;
+
+    if(defined("DOING_AUTOSAVE") && DOING_AUTOSAVE)
+        return $post_id;
+
+    $input_metabox = "";
+    $textarea_metabox = "";
+    $dropdown_metabox = "";
+
+    if(isset($_POST["input-metabox"])) {
+        $input_metabox = $_POST["input-metabox"];
+    }
+    update_post_meta($post_id, "input-metabox", $input_metabox);
+
+    if(isset($_POST["textarea-metabox"])) {
+        $textarea_metabox = $_POST["textarea-metabox"];
+    }
+    update_post_meta($post_id, "textarea-metabox", $textarea_metabox);
+
+
+    if(isset($_POST["dropdown-metabox"])) {
+        $dropdown_metabox = $_POST["dropdown-metabox"];
+
+    }
+      update_post_meta($post_id, "dropdown-metabox", $dropdown_metabox);
+}
+add_action("save_post", "ga_guardar_metaboxes", 10, 3);
+	</code></pre>
+</article>
+
+<article id="video-0706" class="video">
+<h3 class="titulo">7.6 Imprimiendo metaboxes en nuestra plantilla</h3>
+<pre class=" language-php">
+	<code class="language-* language-php">
+&lt;div class="informacion-extra">
+	&lt;?php $calorias =  get_post_meta( get_the_ID(), 'input-metabox', true ); ?>
+	&lt;?php if($calorias) { ?>
+			&lt;div class="calorias">
+				&lt;p>Calorias: &lt;?php 	echo $calorias; ?>&lt;/p>
+			&lt;/div>
+	&lt;?php } ?>
+	&lt;?php $calificacion = get_post_meta( get_the_ID(), 'dropdown-metabox', true ); ?>
+	&lt;?php if($calificacion)  {?>
+			&lt;div class="calificacion">
+				&lt;p>Calificación: &lt;?php 	echo $calificacion; ?>&lt;/p>
+			&lt;/div>
+	&lt;?php } ?>
+&lt;/div>
+
+
+
+&lt;?php $subtitulo = get_post_meta( get_the_ID(), 'textarea-metabox', true ); ?>
+&lt;?php if($subtitulo) { ?>
+&lt;blockquote >
+	  &lt;?php echo $subtitulo;  ?>
+&lt;/blockquote>
+&lt;?php } ?>
+
+	</code></pre>
+</article>
+</section><!--#capitulo-06-->
+
+
+<section id="capitulo-08" class="chapter">
+<h2 class="chapter-title">Capitulo 8: Creando un Plugin de Eventos con CMB2</h2>
+
+<article id="video-0801" class="video">
+<h3 class="titulo">8.1 Descargando y creando un plugin con CMB2</h3>
+<pre class=" language-php">
+	<code class="language-* language-php">
+&lt;?php
+/*
+Plugin Name: GAMetaboxes CMB2
+Plugin URI:
+Description: Agrega MetaBoxes al sitio Gourmet Artist
+Version: 1.0
+Author: Juan Pablo De la torre Valdez
+Author URI:
+License: GLP2
+Licence URI: https://www.gnu.org/licenses/gpl-2.0.html
+*/
+	</code></pre>
+</article>
+
+<article id="video-0802" class="video">
+<h3 class="titulo">8.2 Viendo todos los campos disponibles con CMB2</h3>
+<h4>No hay Snippets para este video.</h4>
+</article>
+
+<article id="video-0803" class="video">
+<h3 class="titulo">8.3 Llamando las librerías de CMB2</h3>
+<pre class=" language-php">
+	<code class="language-* language-php">
+if ( file_exists( dirname( __FILE__ ) . '/CMB2/init.php' ) ) {
+	require_once dirname( __FILE__ ) . '/CMB2/init.php';
+}
+
+add_action( 'cmb2_admin_init', 'campos_eventos' );
+
+function campos_eventos() {
+	$prefix = 'ga_campos_eventos_';
+
+}
+	</code></pre>
+</article>
+
+<article id="video-0804" class="video">
+<h3 class="titulo">8.4 Agregando campos a Eventos</h3>
+<pre class=" language-php">
+	<code class="language-* language-php">
+	$metabox_eventos = new_cmb2_box( array(
+		'id'            => $prefix . 'metabox',
+		'title'         => __( 'Campos Eventos', 'cmb2' ),
+		'object_types'  => array( 'eventos', ), // Post type
+	) );
+
+	$metabox_eventos->add_field( array(
+	  'name'       => __( 'Ciudad', 'cmb2' ),
+	  'desc'       => __( 'Ciudad en la que es el evento', 'cmb2' ),
+	  'id'         => $prefix . 'ciudad',
+	  'type'       => 'text',
+	) );
+
+	$metabox_eventos->add_field( array(
+		'name' => __( 'Fecha de Evento', 'cmb2' ),
+		'desc' => __( 'Fecha en la que será el evento', 'cmb2' ),
+		'id'   => $prefix . 'fecha',
+		'type' => 'text_datetime_timestamp',
+	) );
+
+	$metabox_eventos->add_field( array(
+	  'name' => __( 'Lugares Disponibles', 'cmb2' ),
+	  'desc' => __( 'Campos lugares disponibles', 'cmb2' ),
+	  'id'   => $prefix . 'lugares',
+	  'type' => 'text',
+	) );
+
+	$metabox_eventos->add_field( array(
+		'name'       => __( 'Temas del Curso', 'cmb2' ),
+		'desc'       => __( 'temas que se verán en el curso (opcional)', 'cmb2' ),
+		'id'         => $prefix . 'temas',
+		'type'       => 'text',
+	  'repeatable'      => true,
+	) );
+	</code></pre>
+</article>
+
+<article id="video-0805" class="video">
+<h3 class="titulo">8.5 Agregando Eventos</h3>
+<h4>No hay Snippets para este video</h4>
+</article>
+
+<article id="video-0806" class="video">
+<h3 class="titulo">8.6 Como hacer Query a Meta Boxes</h3>
+<pre class=" language-php">
+	<code class="language-* language-php">
+function consulta_eventos_proximos($texto) {
+  $args = array(
+    'post_type' => 'eventos', // Tell WordPress which post type we want
+     'orderby' => 'meta_value', // We want to organize the events by date
+     'meta_key' => 'ga_campos_eventos_fecha', // Grab the "start date" field created via "More Fields" plugin (stored in YYYY-MM-DD format)
+     'order' => 'ASC', // ASC is the other option
+     'posts_per_page' => '-1', // Let's show them all.
+     'meta_query' => array( // WordPress has all the results, now, return only the events after today's date
+         array(
+             'key' => 'ga_campos_eventos_fecha', // Check the start date field
+             'value' => time(), // Set today's date (note the similar format)
+             'compare' => '>=', // Return the ones greater than today's date
+             'type' => 'NUMERIC,' // Let WordPress know we're working with numbers
+             )
+         ),
+   );
+	 echo "&lt;h2 class='text-center'>" . $texto['texto'] . "&lt;/h2>";
+   echo "&lt;ul class='lista-eventos no-bullet'>";
+	 $eventos = new WP_Query($args); while($eventos->have_posts()): $eventos->the_post();
+
+	 echo the_title('&lt;h3 class="text-center">', '&lt;/h3>');
+
+	 endwhile; wp_reset_postdata();
+echo "&lt;/ul>";
+}
+
+add_shortcode( 'proximos-eventos', 'consulta_eventos_proximos' );
+	</code></pre>
+
+	<pre><code class="language-* language-markup">
+[proximos-eventos texto="Próximos Eventos"]
+	</code></pre>
+</article>
+
+<article id="video-0807" class="video">
+<h3 class="titulo">8.7 Imprimir todos los campos</h3>
+<pre class=" language-php">
+	<code class="language-* language-php">
+$eventos = new WP_Query($args); while($eventos->have_posts()): $eventos->the_post();
+
+echo '&lt;li>';
+
+echo the_title('&lt;h3 class="text-center">', '&lt;/h3>');
+echo "&lt;p>&lt;b>Lugares disponibles: &lt;/b>" . get_post_meta( get_the_ID(), 'ga_campos_eventos_lugares', true ) . "&lt;/p>";
+echo "&lt;p>&lt;b>Ciudad: &lt;/b>" . get_post_meta( get_the_ID(), 'ga_campos_eventos_ciudad', true ) . "&lt;/p>";
+
+$fechaEvento =  get_post_meta( get_the_ID(), 'ga_campos_eventos_fecha', true ); ?>
+&lt;p class="fecha-evento">&lt;b>Fecha:&lt;/b> &lt;?php echo gmdate("d-m-Y", $fechaEvento) ?> &lt;b>Hora: &lt;/b>&lt;?php echo gmdate("H:i", $fechaEvento) ?>&lt;/p>
+
+&lt;?php
+echo "&lt;h4>Temas que se verán&lt;/h4>";
+$temas = get_post_meta( get_the_ID(), 'ga_campos_eventos_temas', true );
+
+foreach($temas as $tema){
+ echo "&lt;p>$tema&lt;/p>";
+}
+echo '&lt;/li>';
+
+endwhile; wp_reset_postdata();
+	</code></pre>
+</article>
+
+
+<article id="video-0808" class="video">
+<h3 class="titulo">8.8 Imprimir los eventos anteriores</h3>
+<pre class=" language-php">
+	<code class="language-* language-php">
+function consulta_eventos_anteriores($texto) {
+  $args = array(
+    'post_type' => 'eventos', // Tell WordPress which post type we want
+     'orderby' => 'meta_value', // We want to organize the events by date
+     'meta_key' => 'ga_campos_eventos_fecha', // Grab the "start date" field created via "More Fields" plugin (stored in YYYY-MM-DD format)
+     'order' => 'ASC', // ASC is the other option
+     'posts_per_page' => '-1', // Let's show them all.
+     'meta_query' => array( // WordPress has all the results, now, return only the events after today's date
+         array(
+             'key' => 'ga_campos_eventos_fecha', // Check the start date field
+             'value' => time(), // Set today's date (note the similar format)
+             'compare' => '&lt;=', // Return the ones greater than today's date
+             'type' => 'NUMERIC,' // Let WordPress know we're working with numbers
+             )
+         ),
+   );
+
+   echo "&lt;h2 class='text-center'>" . $texto['texto'] . "&lt;/pre>&lt;/h2>";
+   echo "&lt;ul class='lista-eventos no-bullet'>";
+      $eventos = new WP_Query($args); while($eventos->have_posts()): $eventos->the_post();
+
+      echo '&lt;li>';
+
+      echo the_title('&lt;h3 class="text-center">', '&lt;/h3>');
+      echo "&lt;p>&lt;b>Lugares disponibles: &lt;/b>" . get_post_meta( get_the_ID(), 'ga_campos_eventos_lugares', true ) . "&lt;/p>";
+      echo "&lt;p>&lt;b>Ciudad: &lt;/b>" . get_post_meta( get_the_ID(), 'ga_campos_eventos_ciudad', true ) . "&lt;/p>";
+      $fechaEvento =  get_post_meta( get_the_ID(), 'ga_campos_eventos_fecha', true ); ?>
+
+      &lt;p class="fecha-evento">&lt;b>Fecha:&lt;/b> &lt;?php echo gmdate("d-m-Y", $fechaEvento) ?> &lt;b>Hora: &lt;/b>&lt;?php echo gmdate("H:i", $fechaEvento) ?>&lt;/p>
+
+      &lt;?php
+      echo "&lt;h4>Temas que se verán&lt;/h4>";
+
+     $temas = get_post_meta( get_the_ID(), 'ga_campos_eventos_temas', true );
+
+     foreach($temas as $tema){
+       echo "&lt;p>$tema&lt;/p>";
+     }
+      echo '&lt;/li>';
+
+      endwhile; wp_reset_postdata();
+  echo "&lt;/ul>";
+}
+
+add_shortcode( 'anteriores-eventos', 'consulta_eventos_anteriores' );
+
+	</code></pre>
+</article>
+
+
+</section> <!--#capitulo-07-->
+
+</div> <!--.wrapper-->
+
+<style>
+body {
+	background-color: #006495;
+}
+h2 {
+	margin:0;
+}
+section.chapter {
+	background-color: #fff;
+	padding:20px;
+	margin-bottom: 20px;
+}
+article:after {
+  content: '';
+  display: block;
+  clear: both;
+}
+h3.titulo {
+	color:#006495;
+}
+a.botton {
+	color:#fff;
+	background-color:#006495;
+	float:right;
+	font-family: arial, helvetica, sans-serif;
+	text-decoration: none;
+	padding: 5px 20px;
+	margin-top: 20px;
+	border-radius: 10px;
+	font-size: 12px;
+	text-transform: uppercase;
+}
+
+</style>
+
+<script>
+	$(document).ready(function() {
+		$( ".video" ).append( "<a data-scroll href='#toc' class='botton'>ir Arriba</a>" );
+		smoothScroll.init();
+	});
+</script>
+</body>
+
+
+</html>
