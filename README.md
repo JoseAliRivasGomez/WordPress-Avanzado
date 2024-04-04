@@ -1,1 +1,1 @@
-# Desarrollo Tiendas Virtuales WordPress y WooCommerce
+# WordPress Avanzado Bloques Gutenberg Post Types y Taxonomias
